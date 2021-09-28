@@ -21,7 +21,7 @@ const UserData = [
         password: 'torresj1'
     },
     {
-        firstName: 'zachyar',
+        firstName: 'Zach',
         lastName: 'Yarbrough',
         email: 'zachyarbro@gmail.com',
         password: 'zach123'
