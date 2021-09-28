@@ -58,15 +58,61 @@ router.post('/', (req, res) => {
         password: req.body.password
     })
         .then(userData => {
-            res.json({
-                message: 'Successfully create user',
-                data: userData
+            req.session.save(() => {
+                req.session.user = userData.id;
+                req.session.loggedIn = true;
+
+                res.json({
+                    message: 'Successfully created user',
+                    data: userData
+                });
             });
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+//Logs the user in based on email and password
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(userData => {
+        if (!userData) {
+            res.status(404).json({ message: 'No user with that email address' });
+            return;
+        }
+
+        //Uses an instance in the user model to check if the password matches
+        const validPassword = userData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+            res.status(404).json({ message: 'Incorrect password' });
+            return;
+        }
+
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.loggedIn = true;
+
+            res.json({ user: userData, message: 'You are now logged in' });
+        });
+    });
+});
+
+//Logs the user out
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else {
+        res.status(404).end();
+    }
 });
 
 //Updates a user
