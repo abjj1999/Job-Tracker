@@ -1,10 +1,15 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Application } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //Returns all applications
-router.get('/', (req, res) => {
-    Application.findAll()
+router.get('/', withAuth, (req, res) => {
+    Application.findAll({
+        where: {
+            user_id: req.session.user_id
+        }
+    })
         .then(appData => {
             res.json({
                 message: `Successfully returned all applications`,
@@ -18,9 +23,10 @@ router.get('/', (req, res) => {
 });
 
 //Returns a single application based on the Id
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     Application.findOne({
         where: {
+            user_id: req.session.user_id,
             id: req.params.id
         }
     })
@@ -43,14 +49,14 @@ router.get('/:id', (req, res) => {
 });
 
 //Creates an application
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Application.create({
         jobTitle: req.body.jobTitle,
         companyName: req.body.companyName,
         companyURL: req.body.companyURL,
         description: req.body.description,
         Date: req.body.Date,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(appData => {
             res.json({
@@ -65,9 +71,10 @@ router.post('/', (req, res) => {
 });
 
 //Updates an application
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Application.update(req.body, {
         where: {
+            user_id: req.session.user_id,
             id: req.params.id
         }
     })
@@ -90,9 +97,10 @@ router.put('/:id', (req, res) => {
 });
 
 //Deletes an application
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Application.destroy({
         where: {
+            user_id: req.session.user_id,
             id: req.params.id
         }
     })
