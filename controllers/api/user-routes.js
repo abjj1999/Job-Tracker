@@ -74,6 +74,7 @@ router.post('/', (req, res) => {
         });
 });
 
+//Logs the user in based on email and password
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -85,6 +86,7 @@ router.post('/login', (req, res) => {
             return;
         }
 
+        //Uses an instance in the user model to check if the password matches
         const validPassword = userData.checkPassword(req.body.password);
 
         if (!validPassword) {
@@ -101,6 +103,7 @@ router.post('/login', (req, res) => {
     });
 });
 
+//Logs the user out
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {

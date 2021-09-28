@@ -26,6 +26,7 @@ router.get('/', withAuth, (req, res) => {
 router.get('/:id', withAuth, (req, res) => {
     Application.findOne({
         where: {
+            user_id: req.session.user_id,
             id: req.params.id
         }
     })
@@ -55,7 +56,7 @@ router.post('/', withAuth, (req, res) => {
         companyURL: req.body.companyURL,
         description: req.body.description,
         Date: req.body.Date,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(appData => {
             res.json({
@@ -73,6 +74,7 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Application.update(req.body, {
         where: {
+            user_id: req.session.user_id,
             id: req.params.id
         }
     })
@@ -98,6 +100,7 @@ router.put('/:id', withAuth, (req, res) => {
 router.delete('/:id', withAuth, (req, res) => {
     Application.destroy({
         where: {
+            user_id: req.session.user_id,
             id: req.params.id
         }
     })
