@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #1da1f2;
+    --secondary-color: #7f7f7f;
+    --accent-color-1: #fff;
+}
+
+@media screen and (min-width: 768px) {
+
+body {
+    background-image: url("https://source.unsplash.com/1920x973/?landscape,road");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-image: url("https://source.unsplash.com/768x973/?landscape,road");
+        background-repeat: no-repeat; 
+        background-size: auto;
+    }
+}
+
+.page-conatiner {
+    position: relative;
+    min-height: 100vh;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.nav h2 {
+    margin-left: 1rem;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    list-style: none;
+}
+
+.nav ul li a {
+    color: #fff;
+}
+
+.card-bg {
+    background-color: var(--accent-color-1);
+}
+
+.rounded {
+    border-radius: 10px;
+    margin-top: 8.5rem;
+}
+
+.card-title {
+    background-color: var(--primary-color);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.instruction {
+    text-align: center;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+.login-btn {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 250ms ease-out;
+}
+
+.login-btn:hover {
+    cursor: pointer;
+    background-color: #0076C7;
+    transition: background-color 250ms ease-in
+}
+
+.create-acct {
+    margin-top: 0.5rem;
+    margin-bottom: -10px;
+}
+
+.footer {
+    position: absolute;
+    background-color: var(--primary-color);
+    bottom: 0px;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.footer-copy {
+    position: absolute;
+    bottom: -10px;
+    color: #fff;
+}
+
+.footer-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
