@@ -13,11 +13,11 @@ Application.init(
             autoIncrement: true
         },
         jobTitle: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         companyName: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         companyURL: {
