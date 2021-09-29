@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
+const exphbs = require('express-handlebars');
 require('dotenv').config();
 
 const app = express();
@@ -18,6 +19,13 @@ app.use(session({
     db: sequelize
   })
 }));
+
+// const helpers = require('./utils/helpers');
+
+const hbs = exphbs.create({ });
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
