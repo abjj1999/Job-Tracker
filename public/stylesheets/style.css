@@ -7,9 +7,17 @@
 @media screen and (min-width: 768px) {
 
 body {
-    background-image: url("https://source.unsplash.com/1920x973/?landscape,road");
+    background-image: url("https://source.unsplash.com/1920x1366/?landscape,road");
     background-repeat: no-repeat;
     background-size: auto;
+}
+.accordion {
+    min-width: 35rem
+}
+.app-tracker-title {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.5rem 10.1rem 0.5rem 10.1rem;
 }
 }
 
@@ -19,7 +27,23 @@ body {
         background-repeat: no-repeat; 
         background-size: auto;
     }
+    .accordion {
+        min-width: 15rem
+    }
+    .app-tracker-title {
+        background-color: var(--secondary-color);
+        color: #fff;
+        padding: 0.5rem 4.25rem 0.5rem 4.25rem;
+    }
 }
+
+.container {
+    margin: 0 2rem 0 2rem
+}
+
+/* .btn-container {
+    margin: 0 25rem 0 25rem;
+} */
 
 .page-conatiner {
     position: relative;
@@ -113,3 +137,74 @@ body {
     align-items: center;
     color: #fff;
 }
+
+/* app tracker styles */
+
+.app-tracker-wrapper {
+    margin: 1.5rem 12.5rem 0 12.5rem;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.create-btn-container {
+    margin: 1rem 1rem 0 0;
+}
+
+.create-btn {
+    background-color: var(--primary-color);
+    font-size: 1.5rem;
+    padding: 0.75rem;
+    border-radius: 25px;
+    color: #fff;
+    transition: background-color 250ms ease-out;
+}
+
+.create-btn:hover {
+    background-color: #00FF00;
+    transition: background-color 250ms ease-in;
+    cursor: pointer;
+}
+
+.extra-margin-left {
+    margin-left: 0.5rem;
+}
+
+.extra-margin-right {
+    margin-right: 0.5rem;
+}
+
+.save-btn {
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    color: #fff;
+    width: 100%;
+    border-radius: 25px;
+    transition: background-color 250ms ease-out, color 250ms ease-out, border-radius 250ms ease-out;
+}
+
+.save-btn:hover {
+    background-color: #00FF00;
+    color: #000;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.del-btn {
+    background-color: hsl(0, 100%, 50%);
+    color: #fff;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    border-radius: 25px;
+    transition: background-color 250ms ease-out, border-radius 250ms ease-out;
+}
+
+.del-btn:hover {
+    background-color: hsl(0, 100%, 40%);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
