@@ -11,7 +11,7 @@ const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 app.use(session({
-  secret: process.env.DB_SECRET,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,  
   cookie: {},
@@ -19,8 +19,6 @@ app.use(session({
     db: sequelize
   })
 }));
-
-// const helpers = require('./utils/helpers');
 
 const hbs = exphbs.create({ });
 
