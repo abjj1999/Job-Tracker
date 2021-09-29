@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Tracker</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../stylesheets/style.css">
+
+    
+</head>
+
+<body>
+    <nav class="nav">
+
+        <h3><a href="../../index.html" style="color:#fff; margin-left: 0.5rem;">Reploy</a></h3>
+        <ul>
+            <li>
+                <a href="/">About Us</a>
+            </li>
+            <li>
+                <a href=""></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="flex-end create-btn-container">
+        <button class="create-btn" type="button" id="createButton">Create +</button>
+    </div>
+    <div class="app-tracker-wrapper">
+        <div class="flex-container align-center-middle">
+            <h3 class="app-tracker-title">Your Applications</h3>
+        </div>
+        
+        <div class="flex-container align-center">
+            <ul class="accordion" data-accordion id="appArea" data-multi-expand="true" data-allow-all-closed="true" style="margin-top: -10px">
+                <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title" id="element" id="jobTitle">Accordion 1</a>
+                    <div class="accordion-content" data-tab-content>
+                        <p id="appDescription">Description</p>
+                        <a href="#" id="appLink">Job Poster Link</a>
+                        <div class="column">
+                            <div class="grid-x grid-padding-x">
+                                <div class="large-12">
+                                    <select>
+                                        <option value="">Status 1</option>
+                                        <option value="">Status 2</option>
+                                        <option value="">Status 3</option>
+                                        <option value="">Status 4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-container">
+                            <button class="save-btn" id="saveBtn">
+                                Save
+                            </button>
+                            <button class="del-btn" id="deleteBtn">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ***DO NOT CHANGE ORDER OF SCRIPT LINKS*** -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/js/foundation.js" integrity="sha512-xl5QX7taasTTA2h6+NAvqR3BL+nBkVdKQlbd27qFrrWkAbE4VjSCfIYfXZyNIQ4T0c/4i6WfHl5vI4IX6FwICw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="../javascript/script.js"></script>
+    
+    <!-- Compressed JavaScript -->
+        
+</body>
+
+</html>
