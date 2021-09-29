@@ -1,8 +1,21 @@
 const router = require('express').Router();
+const { Application } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
-    res.render('dashboard');
+    Application.findAll({
+        where: {
+            user_id: req.session.user_id
+        }
+    })
+        .then(appData => {
+            const applications = appData.map(application => application.get({ plain: true }));
+            res.render('dashboard', applications);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.get('/login', (req, res) => {

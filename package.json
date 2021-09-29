@@ -25,10 +25,7 @@
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
     "jquery": "^3.6.0",
-    "mysql": "^2.18.1",
     "mysql2": "^2.3.0",
-    "path": "^0.12.7",
-    "root": "^3.2.0",
     "sequelize": "^6.6.5",
     "sequelize-cli": "^6.2.0"
   }
