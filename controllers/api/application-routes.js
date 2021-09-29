@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Application } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//Returns all applications
+//Returns all applications from all users
 router.get('/', (req, res) => {
     Application.findAll()
         .then(appData => {
