@@ -1,7 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const moment = require('moment');
+const nodemailer = require('nodemailer');
+class Application extends Model {
+    notifaction() {
+        
+    }
 
-class Application extends Model {}
+}
 
 
 Application.init(
