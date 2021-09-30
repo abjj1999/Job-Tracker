@@ -1,15 +1,10 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
 const { Application } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//Returns all applications
-router.get('/', withAuth, (req, res) => {
-    Application.findAll({
-        where: {
-            user_id: req.session.user_id
-        }
-    })
+//Returns all applications from all users
+router.get('/', (req, res) => {
+    Application.findAll()
         .then(appData => {
             res.json({
                 message: `Successfully returned all applications`,

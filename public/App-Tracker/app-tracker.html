@@ -39,10 +39,11 @@
         <div class="flex-container align-center">
             <ul class="accordion" data-accordion id="appArea" data-multi-expand="true" data-allow-all-closed="true" style="margin-top: -10px">
                 <li class="accordion-item" data-accordion-item>
-                    <a href="#" class="accordion-title" id="element" id="jobTitle">Accordion 1</a>
+                    <a href="#" class="accordion-title">` + 
+                    $("#jobTitleInput").val() + `</a>
                     <div class="accordion-content" data-tab-content>
-                        <p id="appDescription">Description</p>
-                        <a href="#" id="appLink">Job Poster Link</a>
+                        <p>` + $("#appDescription").val() + `</p>
+                        <a href="#" id="appLink">` + $("#applicationUrl").val() + `</a>
                         <div class="column">
                             <div class="grid-x grid-padding-x">
                                 <div class="large-12">
@@ -69,6 +70,24 @@
         </div>
     </div>
 
+    <!-- Modal -->
+
+    <div id="modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+
+            <form action="">
+                <label>Job Title</label>
+                <input type="text" placeholder="ex: Web Developer" id="jobTitleInput">
+                <label name="description">Description</label>
+                <textarea for="description" id="appDescription"></textarea>
+                <label>Application URL</label>
+                <input type="text" placeholder="ex: job.com" id="applicationUrl">
+                <input type="submit" class="save-btn" id="appSaveBtn">
+            </form>
+        </div>
+    </div>
+
     <!-- ***DO NOT CHANGE ORDER OF SCRIPT LINKS*** -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -76,6 +95,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/js/foundation.js" integrity="sha512-xl5QX7taasTTA2h6+NAvqR3BL+nBkVdKQlbd27qFrrWkAbE4VjSCfIYfXZyNIQ4T0c/4i6WfHl5vI4IX6FwICw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="../javascript/script.js"></script>
+
+    <script src="../javascript/apptracker.js"></script>
     
     <!-- Compressed JavaScript -->
         
