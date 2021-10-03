@@ -38,10 +38,10 @@ Application.init(
             type: DataTypes.DATE,
             allowNull: false
         },
-        Status: {
+        /*Status: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        },*/
         user_id: {
             type: DataTypes.INTEGER,
             references: {

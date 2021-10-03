@@ -44,15 +44,7 @@ router.get('/:id', withAuth, (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
-        User.findOne({
-            where: {
-                id: req.session.user_id,
-            }
-        }).then(data => {
-            const userEmail = data.email;
-            console.log(userEmail);
-            emailer(userEmail);
-        })
+        
        
 });
 
@@ -71,12 +63,23 @@ router.post('/', withAuth, (req, res) => {
                 message: 'Successfully create application',
                 
             });
+            console.log(appData);
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
-    
+        User.findOne({
+            where: {
+                id: req.session.user_id,
+            }
+        }).then(data => {
+            const userEmail = data.email;
+            console.log(req.session.user_id)
+            console.log(userEmail);
+            emailer(userEmail);
+        })
+        
 });
 
 //Updates an application
