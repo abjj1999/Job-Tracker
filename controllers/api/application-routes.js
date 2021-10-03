@@ -1,6 +1,8 @@
 const router = require('express').Router();
-const { Application } = require('../../models');
+const sequelize = require('../../config/connection');
+const { Application, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+const emailer = require('../../utils/email');
 
 //Returns all applications from all users
 router.get('/', (req, res) => {
@@ -36,11 +38,22 @@ router.get('/:id', withAuth, (req, res) => {
                 message: `Successfully returned application with the id of ${req.params.id}`,
                 data: appData
             });
+            
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
+        User.findOne({
+            where: {
+                id: req.session.user_id,
+            }
+        }).then(data => {
+            const userEmail = data.email;
+            console.log(userEmail);
+            emailer(userEmail);
+        })
+       
 });
 
 //Creates an application
@@ -56,13 +69,14 @@ router.post('/', withAuth, (req, res) => {
         .then(appData => {
             res.json({
                 message: 'Successfully create application',
-                data: appData
+                
             });
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
+    
 });
 
 //Updates an application
