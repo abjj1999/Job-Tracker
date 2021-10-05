@@ -76,9 +76,10 @@ router.post('/', withAuth, (req, res) => {
             }
         }).then(data => {
             const userEmail = data.email;
-            console.log(req.session.user_id)
-            console.log(userEmail);
-            emailer(userEmail);
+            console.log(req.body.notify_me)
+            if(req.body.notify_me === true){
+                emailer(userEmail);
+            }
         })
         
 });
