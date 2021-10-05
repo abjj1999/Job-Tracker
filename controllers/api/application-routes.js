@@ -56,6 +56,7 @@ router.post('/', withAuth, (req, res) => {
         companyURL: req.body.companyURL,
         description: req.body.description,
         Date: req.body.Date,
+        notify_me: req.body.notify_me,
         user_id: req.session.user_id
     })
         .then(appData => {
