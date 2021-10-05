@@ -9,7 +9,7 @@ async function emailer(email) {
       pass: process.env.E_PW,
     },
   });
-  await schedule.scheduleJob('* * * * * *', () => {
+  await schedule.scheduleJob('30 7 * * 2', () => {
     transporter.sendMail({
       from: '"Job Tracker" <trackerjob7@gmail.com>', // sender address
       to: `${email}`, // list of receivers
