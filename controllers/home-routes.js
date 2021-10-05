@@ -12,7 +12,7 @@ router.get('/', withAuth, (req, res) => {
         .then(appData => {
             const applications = appData.map(application => application.get({ plain: true }));
             console.log(req.session.loggedIn);
-            res.render('dashboard', {applications});
+            res.render('dashboard', { applications, loggedIn: true });
         })
         .catch(err => {
             console.log(err);

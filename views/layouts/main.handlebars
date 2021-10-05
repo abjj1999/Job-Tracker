@@ -15,21 +15,23 @@
     <h2>Reploy</h2>
     <ul>
       {{#if loggedIn}}
-      <li></li>
-      {{else}}
       <li>
         <a href="/">Dashboard</a>
       </li>
       <li>
         <a href="" id="logout">Logout</a>
       </li>
+      {{else}}
+      <li>
+        <a href="/login">Login</a>
+      </li>
       {{/if}}
     </ul>
   </nav>
   {{{ body }}}
-  {{#unless loggedIn}}
+  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
-  {{/unless}}
+  {{/if}}
 </body>
 
 </html>
