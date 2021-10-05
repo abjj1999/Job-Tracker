@@ -6,11 +6,10 @@ async function editFormHandler(event) {
   const company_url = document.querySelector('input[name="post-url"]').value;
   const description = document.querySelector('input[name="description"]').value;
   const date = document.querySelector('input[name="date"]').value;
+  const status = document.querySelector('input[name="status"]').value;
 
 
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
+  const id = this.parentNode.parentNode.parentNode.firstElementChild.getAttribute('id');
   
   const response = await fetch(`/api/appications/${id}`, {
     method: 'PUT',
@@ -20,6 +19,7 @@ async function editFormHandler(event) {
       company_url,
       description,
       date,
+      status,
       notify_me
     }),
     headers: {

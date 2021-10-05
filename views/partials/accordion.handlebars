@@ -5,23 +5,11 @@
     <div class="accordion__content">
         <h4>{{companyName}}</h4>
         <a href="{{companyURL}}" id="appLink" target="_blank">{{format_url companyURL}}</a>
-        <p>{{format_date date}}</p>
+        <p>Date Applied: {{format_date date}}</p>
         <p>{{description}}</p>
-        <div class="column">
-            <div class="grid-x grid-padding-x">
-                <div class="large-12">
-                    <select>
-                        <option value="">Ready to Apply</option>
-                        <option value="">Submitted</option>
-                        <option value="">Pending</option>
-                        <option value="">Accepted</option>
-                        <option value="">Declined</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+        <p>Status: {{status}}</p>
         <div class="btn-container">
-            <button class="save-btn">Save</button>
+            <button class="edit-btn">Edit</button>
             <button class="del-btn" id="deleteBtn">Delete</button>
         </div>
     </div>

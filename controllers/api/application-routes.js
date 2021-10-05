@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
 const { Application, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 const emailer = require('../../utils/email');
@@ -56,6 +55,7 @@ router.post('/', withAuth, (req, res) => {
         companyURL: req.body.companyURL,
         description: req.body.description,
         date: req.body.date,
+        status: req.body.status,
         notify_me: req.body.notify_me,
         user_id: req.session.user_id
     })

@@ -2,7 +2,7 @@ async function deleteFormHandler(event) {
   event.preventDefault();
 
   const id = this.parentNode.parentNode.parentNode.firstElementChild.getAttribute('id');
-  console.log(id);
+
   const response = await fetch(`/api/applications/${id}`, {
     method: 'DELETE'
   });

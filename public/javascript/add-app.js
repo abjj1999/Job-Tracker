@@ -6,7 +6,10 @@ async function newFormHandler(event) {
   const companyURL = document.querySelector('input[name="post-url"]').value;
   const description = document.querySelector('textarea[name="description"]').value;
   const date = document.querySelector('input[name="date"]').value;
+  const statusArr = document.querySelector('select[name="status"]').options;
+  const status = statusArr[statusArr.selectedIndex].text;
   const notify_me = document.querySelector('input[name="notify-me"]').checked;
+  
   if(jobTitle && companyName && companyURL && description && date) {
     const response = await fetch(`/api/applications`, {
       method: 'POST',
@@ -16,6 +19,7 @@ async function newFormHandler(event) {
         companyURL,
         description,
         date,
+        status,
         notify_me
       }),
       headers: {

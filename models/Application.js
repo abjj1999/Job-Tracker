@@ -38,10 +38,10 @@ Application.init(
             type: DataTypes.DATE,
             allowNull: false
         },
-        /*Status: {
+        status: {
             type: DataTypes.STRING,
             allowNull: false
-        },*/
+        },
         notify_me: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
