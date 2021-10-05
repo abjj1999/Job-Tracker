@@ -2,24 +2,28 @@
     <div class="flex-container align-center">
         <div class="row small-up-2 medium-up-3">
             <div class="column">
-                <div class="card-bg rounded">
-                    <h2 class="card-title">Welcome Back!</h2>
-                    <p class="instruction">Enter your account info below to login:</p>
+                <div class="card-bg rounded-signup">
+                    <h2 class="card-title">Welcome to Reploy!</h2>
+                    <p class="instruction">Enter your info below to get started:</p>
                     <div class="card-section">
-                        <form class="show-password login-form">
+                        <form class="show-password signup-form">
                             <div class="grid-x grid-padding-x">
                                 <div class="large-12 cell">
+                                    <label for="first-signup">First Name:</label>
+                                    <input id="first-signup" type="text" placeholder="John">
+                                    <label for="last-signup">Last Name:</label>
+                                    <input id="last-signup" type="text" placeholder="Doe">
                                     <label>Email:</label>
-                                    <input id="email-login" type="text" placeholder="example@mail.com"
+                                    <input id="email-signup" type="text" placeholder="example@mail.com"
                                         style="border-radius: 5px;">
                                     <div class="password-wrapper">
                                         <label for="password">Your password</label>
-                                        <input type="password" value="" placeholder="Enter Password" id="password-login"
-                                            class="password">
+                                        <input type="password" value="" placeholder="Enter Password"
+                                            id="password-signup" class="password">
                                     </div>
                                     <div class="text-center">
-                                        <button class="login-btn">Login</button>
-                                        <p class="create-acct"><a href="/signup">Create Account</a></p>
+                                        <button class="login-btn" id="signup-btn">Create Account</button>
+                                        <p class="create-acct">Already have an account? <a href="/login">Login</a></p>
                                     </div>
                                 </div>
                             </div>

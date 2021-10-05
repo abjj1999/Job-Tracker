@@ -13,11 +13,21 @@
   .accordion-cstm {
     min-width: 35rem;
     background: #fff;
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem 0 0.5rem;
     box-shadow: 0 0 15px rgb(0, 0, 0);
     border-radius: 5px;
     overflow: hidden;
   }
+
+  .accordion__label {
+    width: 110%;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: background 250ms;
+    transform: translateX(-2.5rem);
+  }
+
   .app-tracker-title {
     background-color: var(--secondary-color);
     color: #fff;
@@ -34,11 +44,21 @@
   .accordion-cstm {
     min-width: 15rem;
     background: #fff;
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem 0 0.5rem;
     box-shadow: 0 0 15px rgb(0, 0, 0);
     border-radius: 5px;
     overflow: hidden;
   }
+
+  .accordion__label {
+    width: 120%;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: background 250ms;
+    transform: translateX(-2.5rem);
+  }
+
   .app-tracker-title {
     background-color: var(--secondary-color);
     color: #fff;
@@ -48,15 +68,7 @@
 
 .accordion__label,
 .accordion__content {
-  padding: 14px 20px;
-}
-
-.accordion__label {
-  width: 100%;
-  font-weight: bold;
-  cursor: pointer;
-  position: relative;
-  transition: background 250ms;
+  padding: 14px 16px;
 }
 
 .accordion__label:hover {
@@ -81,6 +93,7 @@
     line-height: 1.6;
     font-size: 0.85em;
     display: none;
+    max-width: 30rem;
 }
 
 .accordion__input {
@@ -143,6 +156,11 @@
 .rounded {
   border-radius: 10px;
   margin-top: 8.5rem;
+}
+
+.rounded-signup {
+  border-radius: 10px;
+  margin-top: 4.5rem;
 }
 
 .card-title {
