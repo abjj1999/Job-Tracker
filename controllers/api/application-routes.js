@@ -56,6 +56,7 @@ router.post('/', withAuth, (req, res) => {
         companyURL: req.body.companyURL,
         description: req.body.description,
         Date: req.body.Date,
+        notify_me: req.body.notify_me,
         user_id: req.session.user_id
     })
         .then(appData => {
@@ -69,17 +70,18 @@ router.post('/', withAuth, (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
-    User.findOne({
-        where: {
-            id: req.session.user_id,
-        }
-    }).then(data => {
-        const userEmail = data.email;
-        console.log(req.session.user_id)
-        console.log(userEmail);
-        emailer(userEmail);
-    })
-
+        User.findOne({
+            where: {
+                id: req.session.user_id,
+            }
+        }).then(data => {
+            const userEmail = data.email;
+            console.log(req.body.notify_me)
+            if(req.body.notify_me === true){
+                emailer(userEmail);
+            }
+        })
+        
 });
 
 //Updates an application

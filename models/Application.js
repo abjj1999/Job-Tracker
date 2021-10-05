@@ -42,6 +42,10 @@ Application.init(
             type: DataTypes.STRING,
             allowNull: false
         },*/
+        notify_me: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

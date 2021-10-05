@@ -14,7 +14,8 @@ async function newFormHandler(event) {
       companyName,
       companyURL,
       description,
-      Date
+      Date, 
+      
     }),
     headers: {
       'Content-Type': 'application/json'
