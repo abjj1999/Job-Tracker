@@ -34,7 +34,7 @@ Application.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        Date: {
+        date: {
             type: DataTypes.DATE,
             allowNull: false
         },

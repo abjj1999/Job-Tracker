@@ -11,9 +11,9 @@
         <div class="accordion-cstm" id="appArea">
             <ul>
                 {{#each applications as |application|}}
-                
-                    {{> accordion application}}
-                
+
+                {{> accordion application}}
+
                 {{/each}}
             </ul>
         </div>
@@ -36,8 +36,10 @@
             <textarea name="description" id="appDescription"></textarea>
             <label>Application URL</label>
             <input type="text" placeholder="ex: job.com" id="applicationUrl" name="post-url">
-            <input name="date" type="text" class="form-control datepicker" id="date" placeholder="Select date" autocomplete="off"
-                autofill="off">
+            <input name="date" type="text" class="form-control datepicker" id="date" placeholder="Select date"
+                autocomplete="off" autofill="off">
+            <label>Recieve Notifications</label><br>
+            <input type="checkbox" id="notify-me" name="notify-me" value="Notify">
             <input type="submit" class="save-btn" id="appSaveBtn">
         </form>
     </div>
