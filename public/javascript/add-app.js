@@ -5,7 +5,8 @@ async function newFormHandler(event) {
   const companyName = document.querySelector('input[name="company-title"]').value;
   const companyURL = document.querySelector('input[name="post-url"]').value;
   const description = document.querySelector('textarea[name="description"]').value;
-  const Date = document.querySelector('input[name="date"]').value;
+  const date = document.querySelector('input[name="date"]').value;
+  const notify_me = document.querySelector('input[name="notify-me"]').checked;
 
   const response = await fetch(`/api/applications`, {
     method: 'POST',
@@ -14,8 +15,8 @@ async function newFormHandler(event) {
       companyName,
       companyURL,
       description,
-      Date, 
-      
+      date,
+      notify_me
     }),
     headers: {
       'Content-Type': 'application/json'

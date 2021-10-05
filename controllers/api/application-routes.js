@@ -55,7 +55,7 @@ router.post('/', withAuth, (req, res) => {
         companyName: req.body.companyName,
         companyURL: req.body.companyURL,
         description: req.body.description,
-        Date: req.body.Date,
+        date: req.body.date,
         notify_me: req.body.notify_me,
         user_id: req.session.user_id
     })
