@@ -343,3 +343,28 @@
 .close:hover {
   color: #665;
 }
+
+
+.ui-datepicker-header {
+  background-color: var(--primary-color);
+  text-align: center;
+  color: #fff;
+}
+
+.ui-datepicker-month, .ui-datepicker-year {
+  font-weight: bolder;
+}
+
+.ui-datepicker-prev{
+  position: absolute;
+  left: 0;
+  color: #fff;
+  padding-left: 5px;
+}
+
+.ui-datepicker-next {
+  position: absolute;
+  right: 0;
+  color: #fff;
+  padding-right: 5px;
+}

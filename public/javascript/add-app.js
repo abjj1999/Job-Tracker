@@ -7,27 +7,32 @@ async function newFormHandler(event) {
   const description = document.querySelector('textarea[name="description"]').value;
   const date = document.querySelector('input[name="date"]').value;
   const notify_me = document.querySelector('input[name="notify-me"]').checked;
-
-  const response = await fetch(`/api/applications`, {
-    method: 'POST',
-    body: JSON.stringify({
-      jobTitle,
-      companyName,
-      companyURL,
-      description,
-      date,
-      notify_me
-    }),
-    headers: {
-      'Content-Type': 'application/json'
+  if(jobTitle && companyName && companyURL && description && date) {
+    const response = await fetch(`/api/applications`, {
+      method: 'POST',
+      body: JSON.stringify({
+        jobTitle,
+        companyName,
+        companyURL,
+        description,
+        date,
+        notify_me
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
     }
-  });
 
-  if (response.ok) {
-    document.location.replace('/');
   } else {
-    alert(response.statusText);
+    window.alert("Please fill out all fields.");
   }
+  
 }
 
 document.querySelector('#appSaveBtn').addEventListener('click', newFormHandler);
