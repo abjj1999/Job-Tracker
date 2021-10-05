@@ -11,7 +11,8 @@ router.get('/', withAuth, (req, res) => {
     })
         .then(appData => {
             const applications = appData.map(application => application.get({ plain: true }));
-            res.render('dashboard', applications);
+            console.log(req.session.loggedIn);
+            res.render('dashboard', {applications});
         })
         .catch(err => {
             console.log(err);

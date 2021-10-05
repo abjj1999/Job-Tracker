@@ -11,21 +11,12 @@
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../stylesheets/style.css">
-
-    
 </head>
 
 <body>
     <nav class="nav">
-
-        <h3><a href="../../index.html" style="color:#fff; margin-left: 0.5rem;">Reploy</a></h3>
         <ul>
-            <li>
-                <a href="/">About Us</a>
-            </li>
-            <li>
-                <a href=""></a>
-            </li>
+            <a href="/api/users/login">Home</a>
         </ul>
     </nav>
     <div class="flex-end create-btn-container">
@@ -35,38 +26,11 @@
         <div class="flex-container align-center-middle">
             <h3 class="app-tracker-title">Your Applications</h3>
         </div>
-        
+
         <div class="flex-container align-center">
-            <ul class="accordion" data-accordion id="appArea" data-multi-expand="true" data-allow-all-closed="true" style="margin-top: -10px">
-                <li class="accordion-item" data-accordion-item>
-                    <a href="#" class="accordion-title">` + 
-                    $("#jobTitleInput").val() + `</a>
-                    <div class="accordion-content" data-tab-content>
-                        <p>` + $("#appDescription").val() + `</p>
-                        <a href="#" id="appLink">` + $("#applicationUrl").val() + `</a>
-                        <div class="column">
-                            <div class="grid-x grid-padding-x">
-                                <div class="large-12">
-                                    <select>
-                                        <option value="">Status 1</option>
-                                        <option value="">Status 2</option>
-                                        <option value="">Status 3</option>
-                                        <option value="">Status 4</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="btn-container">
-                            <button class="save-btn" id="saveBtn">
-                                Save
-                            </button>
-                            <button class="del-btn" id="deleteBtn">
-                                Delete
-                            </button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <div class="accordion-cstm" id="appArea">
+                
+            </div>
         </div>
     </div>
 
@@ -83,6 +47,8 @@
                 <textarea for="description" id="appDescription"></textarea>
                 <label>Application URL</label>
                 <input type="text" placeholder="ex: job.com" id="applicationUrl">
+                <input type="text" class="form-control datepicker" id="date" placeholder="Select date"
+                    autocomplete="off" autofill="off">
                 <input type="submit" class="save-btn" id="appSaveBtn">
             </form>
         </div>
@@ -90,16 +56,17 @@
 
     <!-- ***DO NOT CHANGE ORDER OF SCRIPT LINKS*** -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/js/foundation.js" integrity="sha512-xl5QX7taasTTA2h6+NAvqR3BL+nBkVdKQlbd27qFrrWkAbE4VjSCfIYfXZyNIQ4T0c/4i6WfHl5vI4IX6FwICw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/js/foundation.js"
+        integrity="sha512-xl5QX7taasTTA2h6+NAvqR3BL+nBkVdKQlbd27qFrrWkAbE4VjSCfIYfXZyNIQ4T0c/4i6WfHl5vI4IX6FwICw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="../javascript/script.js"></script>
 
     <script src="../javascript/apptracker.js"></script>
-    
-    <!-- Compressed JavaScript -->
-        
 </body>
 
 </html>

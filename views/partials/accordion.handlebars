@@ -1,0 +1,27 @@
+<div>
+    
+    <input type="checkbox" id="{{id}}" class="accordion__input">
+    <label for="{{id}}" class="accordion__label">{{jobTitle}}</label>
+    <div class="accordion__content">
+        <a href="{{companyUrl}}" id="appLink" target="_blank">{{companyUrl}}</a>
+        <p>{{Date}}</p>
+        <div class="column">
+            <div class="grid-x grid-padding-x">
+                <div class="large-12">
+                    <select>
+                        <option value="">Ready to Apply</option>
+                        <option value="">Submitted</option>
+                        <option value="">Pending</option>
+                        <option value="">Accepted</option>
+                        <option value="">Declined</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <button class="save-btn">Save</button>
+            <button class="del-btn" id="deleteBtn">Delete</button>
+        </div>
+    </div>
+</div>
+

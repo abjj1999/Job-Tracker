@@ -1,18 +1,19 @@
 async function deleteFormHandler(event) {
   event.preventDefault();
 
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
+  const id = this.parentNode.parentNode.parentNode.firstElementChild.getAttribute('id');
+  console.log(id);
   const response = await fetch(`/api/applications/${id}`, {
     method: 'DELETE'
   });
 
+  console.log('Deleted!');
+
   if (response.ok) {
-    document.location.replace('/dashboard/');
+    document.location.replace('/');
   } else {
     alert(response.statusText);
   }
 }
 
-document.querySelector('.delete-app-btn').addEventListener('click', deleteFormHandler);
+$('.del-btn').on('click', deleteFormHandler);

@@ -1,20 +1,20 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const app_title = document.querySelector('input[name="app-title"]').value;
-  const company_title = document.querySelector('input[name="company-title"]').value;
-  const company_url = document.querySelector('input[name="post-url"]').value;
-  const description = document.querySelector('input[name="description"]').value;
-  const date = document.querySelector('input[name="date"]').value;
+  const jobTitle = document.querySelector('input[name="app-title"]').value;
+  const companyName = document.querySelector('input[name="company-title"]').value;
+  const companyURL = document.querySelector('input[name="post-url"]').value;
+  const description = document.querySelector('textarea[name="description"]').value;
+  const Date = document.querySelector('input[name="date"]').value;
 
   const response = await fetch(`/api/applications`, {
     method: 'POST',
     body: JSON.stringify({
-      app_title,
-      company_title,
-      company_url,
+      jobTitle,
+      companyName,
+      companyURL,
       description,
-      date
+      Date
     }),
     headers: {
       'Content-Type': 'application/json'
@@ -22,10 +22,10 @@ async function newFormHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.replace('/');
   } else {
     alert(response.statusText);
   }
 }
 
-document.querySelector('.new-app-form').addEventListener('submit', newFormHandler);
+document.querySelector('#appSaveBtn').addEventListener('click', newFormHandler);
