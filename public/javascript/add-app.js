@@ -10,7 +10,7 @@ async function newFormHandler(event) {
   const status = statusArr[statusArr.selectedIndex].text;
   const notify_me = document.querySelector('input[name="notify-me"]').checked;
   
-  if(jobTitle && companyName && companyURL && description && date) {
+  if(jobTitle && companyName && companyURL && date) {
     const response = await fetch(`/api/applications`, {
       method: 'POST',
       body: JSON.stringify({
