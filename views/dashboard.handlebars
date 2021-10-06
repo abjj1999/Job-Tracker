@@ -1,1 +1,75 @@
-<h1>DASHBOARD</h1>
+<div class="flex-end create-btn-container">
+    <button class="create-btn" type="button" id="createButton">Create +</button>
+</div>
+<div class="app-tracker-wrapper">
+    <div class="flex-container align-center-middle">
+        <h3 class="app-tracker-title">Your Applications</h3>
+    </div>
+
+    <div class="flex-container align-center">
+        {{#if applications.length}}
+        <div class="accordion-cstm" id="appArea">
+            <ul>
+                {{#each applications as |application|}}
+
+                {{> accordion application}}
+
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+    </div>
+</div>
+
+<!-- Modal -->
+
+<div id="modal">
+    <div class="modal-content">
+        <div class="close">+</div>
+
+        <form action="">
+            <label>Job Title</label>
+            <input name="app-title" type="text" placeholder="ex: Web Developer" id="jobTitleInput">
+            <label>Company Name</label>
+            <input name="company-title" type="text">
+            <label>Description</label>
+            <textarea name="description" id="appDescription"></textarea>
+            <label>Application URL</label>
+            <input type="text" placeholder="ex: job.com" id="applicationUrl" name="post-url">
+            <input name="date" type="text" class="form-control datepicker" id="date" placeholder="Select date"
+                autocomplete="off" autofill="off">
+                    <select name="status">
+                        <option value="">Ready to Apply</option>
+                        <option value="">Submitted</option>
+                        <option value="">Pending</option>
+                        <option value="">Accepted</option>
+                        <option value="">Declined</option>
+                    </select>
+            <label>Want to Recieve Notifications?</label>
+            <input type="checkbox" id="notify-me" name="notify-me" value="Notify" placeholder="Notify Me">
+            <input type="submit" class="save-btn" id="appSaveBtn">
+        </form>
+    </div>
+</div>
+
+<!-- ***DO NOT CHANGE ORDER OF SCRIPT LINKS*** -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/js/foundation.js"
+    integrity="sha512-xl5QX7taasTTA2h6+NAvqR3BL+nBkVdKQlbd27qFrrWkAbE4VjSCfIYfXZyNIQ4T0c/4i6WfHl5vI4IX6FwICw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script src="/javascript/script.js"></script>
+
+<script src="/javascript/delete-app.js"></script>
+
+<script src="/javascript/add-app.js"></script>
+
+<script src="/javascript/edit-app.js"></script>

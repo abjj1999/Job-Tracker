@@ -1,0 +1,23 @@
+<div>
+    <input type="checkbox" id="{{id}}" class="accordion__input">
+    <label for="{{id}}" class="accordion__label">{{jobTitle}}</label>
+    <div class="accordion__content">
+        <h4 class="company_Name">{{companyName}}</h4>
+        <p>Application URL: <a class="company_URL" href="{{companyURL}}" id="appLink" target="_blank">{{format_url companyURL}}</a></p>
+        <p class="date_Applied">Date Applied: <span>{{format_date date}}</span></p>
+        <p class="job_Description">Job Description: <span>{{description}}</span></p>
+        <p>Status: <span>{{status}}</span></p>
+        {{#if notify_me}}
+        <p class="notifs">Receiving Notifications</p>
+        {{else}}
+        <p class="notifs">Not Receiving Notifications</p>
+        {{/if}}
+        <div class="btn-container">
+            <button class="edit-btn">Edit</button>
+            {{#if edit-btn}}
+            <button class="save-btn">Save</button>
+            {{/if}}
+            <button class="del-btn" id="deleteBtn">Delete</button>
+        </div>
+    </div>
+</div>

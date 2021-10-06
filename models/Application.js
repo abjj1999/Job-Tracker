@@ -1,7 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const moment = require('moment');
+class Application extends Model {
+    
 
-class Application extends Model {}
+}
 
 
 Application.init(
@@ -31,9 +34,17 @@ Application.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        Date: {
+        date: {
             type: DataTypes.DATE,
             allowNull: false
+        },
+        status: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        notify_me: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,

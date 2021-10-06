@@ -5,20 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reploy</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-    </header>
-    <main>
-      {{{ body }}}
-      {{#unless loggedIn}}
-        <script src="../public/javascript/login.js"></script>
-      {{/unless}}
-    </main>
-  </div>
+  <nav class="nav">
+    <h2>Reploy</h2>
+    <ul>
+      {{#if loggedIn}}
+      <li>
+        <a href="/">Dashboard</a>
+      </li>
+      <li>
+        <a href="" id="logout">Logout</a>
+      </li>
+      {{else}}
+      <li>
+        <a href="/login">Login</a>
+      </li>
+      <li>
+        <a href="/signup">Signup</a>
+      </li>
+      {{/if}}
+    </ul>
+  </nav>
+  {{{ body }}}
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>

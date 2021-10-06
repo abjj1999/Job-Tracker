@@ -1,15 +1,11 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Application } = require('../../models');
+const { Application, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+const emailer = require('../../utils/email');
 
-//Returns all applications
-router.get('/', withAuth, (req, res) => {
-    Application.findAll({
-        where: {
-            user_id: req.session.user_id
-        }
-    })
+//Returns all applications from all users
+router.get('/', (req, res) => {
+    Application.findAll()
         .then(appData => {
             res.json({
                 message: `Successfully returned all applications`,
@@ -41,11 +37,14 @@ router.get('/:id', withAuth, (req, res) => {
                 message: `Successfully returned application with the id of ${req.params.id}`,
                 data: appData
             });
+
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
+
+
 });
 
 //Creates an application
@@ -55,19 +54,34 @@ router.post('/', withAuth, (req, res) => {
         companyName: req.body.companyName,
         companyURL: req.body.companyURL,
         description: req.body.description,
-        Date: req.body.Date,
+        date: req.body.date,
+        status: req.body.status,
+        notify_me: req.body.notify_me,
         user_id: req.session.user_id
     })
         .then(appData => {
             res.json({
                 message: 'Successfully create application',
-                data: appData
+
             });
+            console.log(appData);
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
+        User.findOne({
+            where: {
+                id: req.session.user_id,
+            }
+        }).then(data => {
+            const userEmail = data.email;
+            console.log(req.body.notify_me)
+            if(req.body.notify_me === true){
+                emailer(userEmail);
+            }
+        })
+        
 });
 
 //Updates an application
