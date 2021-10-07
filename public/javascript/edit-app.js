@@ -47,7 +47,7 @@ editBtns.forEach(editBtn => {
   const descriptionEdit = parent.getElementsByTagName('span')[1];
   const statusEdit = parent.getElementsByTagName('span')[2];
   const notifyEdit = parent.getElementsByTagName('p')[4];
-  $(editBtn).on('click', function() {
+  $(editBtn).on('click', function () {
     var job = jobLabel.textContent;
     var jobTitleInput = $(`<input type='text' name='app-title-edit' value='${job}'>`);
     var company = companyInput.textContent;
@@ -57,11 +57,11 @@ editBtns.forEach(editBtn => {
     var dateInput = $(`<input type="text" name="date-edit" value="${dateApplied.textContent}" class="datepicker">`);
     var descriptionInput = $(`<textarea name="description-edit">${descriptionEdit.textContent}</textarea>`);
     var statusDropdown = $(`<select name="status-edit" value=${statusEdit.textContent}>
-    <option value="Ready to Apply">Ready to Apply</option>
-    <option value="Submitted">Submitted</option>
-    <option value="Pending">Pending</option>
-    <option value="Accepted">Accepted</option>
-    <option value="Declined">Declined</option>
+    <option value="Pending"><div class="pending"></div>Pending</option>
+                        <option value="Ready to Apply"><div class="ready-to-apply"></div>Ready to Apply</option>
+                        <option value="Submitted"><div class="submitted"></div>Submitted</option>
+                        <option value="Accepted"><div class="accepted"></div>Accepted</option>
+                        <option value="Declined"><div class="declined"></div>Declined</option>
 </select>`)
     var notifs = $(`<label>Recieve Notifications</label>
     <input type="checkbox" name="notify-me-edit" value="Notify">`)
@@ -76,6 +76,6 @@ editBtns.forEach(editBtn => {
     $(descriptionEdit).replaceWith(descriptionInput);
     $(statusEdit).replaceWith(statusDropdown)
     $(notifyEdit).replaceWith(notifs);
-});
+  });
 });
 

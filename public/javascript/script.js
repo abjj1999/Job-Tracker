@@ -1,4 +1,4 @@
-// const moment = require('moment');
+
 
 $(document).foundation();
 
@@ -22,13 +22,3 @@ var today = moment().format("mm/dd/yyy");
     $(".today").text(today)
 
 
-
-// $("#date").on("change", function(e) {
-//     var date = $(this).val();
-
-//     var e = moment()
-//     var b = moment(date, "mm/dd/yyyy");
-
-//     var months = e.diff(b, "months");
-//     var option = $("")
-// })
