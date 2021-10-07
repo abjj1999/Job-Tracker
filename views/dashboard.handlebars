@@ -39,11 +39,11 @@
             <input name="date" type="text" class="form-control datepicker" id="date" placeholder="Select date"
                 autocomplete="off" autofill="off">
                     <select name="status">
-                        <option value="">Ready to Apply</option>
-                        <option value="">Submitted</option>
-                        <option value="">Pending</option>
-                        <option value="">Accepted</option>
-                        <option value="">Declined</option>
+                        <option value="Pending"><div class="pending"></div>Pending</option>
+                        <option value="Ready to Apply"><div class="ready-to-apply"></div>Ready to Apply</option>
+                        <option value="Submitted"><div class="submitted"></div>Submitted</option>
+                        <option value="Accepted"><div class="accepted"></div>Accepted</option>
+                        <option value="Declined"><div class="declined"></div>Declined</option>
                     </select>
             <label>Want to Recieve Notifications?</label>
             <input type="checkbox" id="notify-me" name="notify-me" value="Notify" placeholder="Notify Me">
@@ -73,3 +73,5 @@
 <script src="/javascript/add-app.js"></script>
 
 <script src="/javascript/edit-app.js"></script>
+
+<script src="/javascript/colors.js"></script>
