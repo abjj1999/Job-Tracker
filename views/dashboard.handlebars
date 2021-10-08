@@ -9,13 +9,11 @@
     <div class="flex-container align-center">
         {{#if applications.length}}
         <div class="accordion-cstm" id="appArea">
-            <ul>
                 {{#each applications as |application|}}
 
                 {{> accordion application}}
 
                 {{/each}}
-            </ul>
         </div>
         {{/if}}
     </div>
@@ -41,7 +39,7 @@
                     <select name="status">
                         <option value="Pending"><div class="pending"></div>Pending</option>
                         <option value="Ready to Apply"><div class="ready-to-apply"></div>Ready to Apply</option>
-                        <option value="Submitted"><div class="submitted"></div>Submitted</option>
+                        <option value="Submitted"><span class="submitted"></span>Submitted</option>
                         <option value="Accepted"><div class="accepted"></div>Accepted</option>
                         <option value="Declined"><div class="declined"></div>Declined</option>
                     </select>
@@ -75,3 +73,5 @@
 <script src="/javascript/edit-app.js"></script>
 
 <script src="/javascript/colors.js"></script>
+
+<script src="/javascript/accordion.js"></script>
