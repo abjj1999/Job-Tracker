@@ -10,7 +10,7 @@ async function editFormHandler() {
   const notify_me = document.querySelector('input[name="notify-me-edit"]').checked;
 
 
-  const id = this.parentNode.parentNode.parentNode.firstElementChild.getAttribute('id');
+  const id = this.parentNode.parentNode.parentNode.firstElementChild.getAttribute('id')
   console.log(id);
   const response = await fetch(`/api/applications/${id}`, {
     method: 'PUT',
@@ -41,6 +41,8 @@ const editBtns = document.querySelectorAll('.edit-btn');
 editBtns.forEach(editBtn => {
   const parent = editBtn.parentNode.parentNode.parentNode;
   const jobLabel = parent.getElementsByTagName('button')[0];
+  const id = jobLabel.getAttribute('id');
+  console.log(id)
   const companyInput = parent.getElementsByTagName('h4')[0];
   const companyURL = parent.getElementsByTagName('a')[0];
   const dateApplied = parent.getElementsByTagName('span')[0];
@@ -49,7 +51,7 @@ editBtns.forEach(editBtn => {
   const notifyEdit = parent.getElementsByTagName('p')[4];
   $(editBtn).on('click', function () {
     var job = jobLabel.textContent;
-    var jobTitleInput = $(`<input type='text' name='app-title-edit' value='${job}'>`);
+    var jobTitleInput = $(`<input type='text' id='${id}'' name='app-title-edit' value='${job}'>`);
     var company = companyInput.textContent;
     var companyTitleInput = $(`<input type='text' name='company-title-edit' value='${company}'>`);
     var link = companyURL.getAttribute('href');
