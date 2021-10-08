@@ -19,14 +19,24 @@
     overflow: hidden;
   }
 
-  .accordion__label {
-    width: 110%;
-    font-weight: bold;
+  .accordion__button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
     cursor: pointer;
-    /* position: relative; */
-    transition: background 250ms;
-    transform: translateX(-2.5rem);
-    padding: 14px 16px;
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+    transition: background 250ms ease;
+    margin-top: -10px;
+  }
+
+  .accordion__button::after {
+    content: "\25be";
+    float: right;
+    transform: scale(1.5);
   }
 
   .app-tracker-title {
@@ -51,14 +61,24 @@
     overflow: hidden;
   }
 
-  .accordion__label {
-    width: 120%;
-    font-weight: bold;
+  .accordion__button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
     cursor: pointer;
-    position: relative;
+    background-color: #fff;
+    color: #000;
+    text-align: left;
     transition: background 250ms;
-    transform: translateX(-2.5rem);
-    padding: 14px 16px;
+    margin-top: -12px;
+  }
+
+  .accordion__button::after {
+    content: "\25be";
+    float: right;
+    transform: scale(1.5);
   }
 
   .app-tracker-title {
@@ -69,33 +89,18 @@
 }
 
 .accordion__content {
-  padding: 0 3rem 1.5rem 3rem;
-  margin: auto;
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 250ms;
+  padding: 0 15px;
 }
 
-.accordion__label:hover {
+.accordion__button--active {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.accordion__label::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
-  width: 12px;
-  height: 6px;
-  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%2300000099;" /></svg>');
-  background-size: contain;
-  transition: transform 0.4s;
-}
-
-.accordion__content {
-    background: #ffffff;
-    line-height: 1.6;
-    font-size: 0.85em;
-    display: none;
-    max-width: 30rem;
+.accordion__button--active::after {
+  content: "\25b4";
 }
 
 .accordion__input {
@@ -299,6 +304,7 @@
   color: #fff;
   padding: 0.5rem;
   margin-top: 0.5rem;
+  margin-bottom: 1rem;
   width: 100%;
   border-radius: 25px;
   transition: background-color 250ms ease-out, border-radius 250ms ease-out;
@@ -396,7 +402,7 @@
   aspect-ratio: 1;
   border-radius: 100%;
   display: inline-block;
-  margin: 0 0.25rem 0.1rem 0;
+  margin: 0 0.25rem 0.05rem 0;
 }
 .pending {
   background-color: var(--secondary-color);
@@ -404,7 +410,7 @@
   aspect-ratio: 1;
   border-radius: 100%;
   display: inline-block;
-  margin: 0 0.25rem 0.1rem 0;
+  margin: 0 0.25rem 0.05rem 0;
 }
 .submitted {
   background-color: #FFDD00;
@@ -412,7 +418,7 @@
   aspect-ratio: 1;
   border-radius: 100%;
   display: inline-block;
-  margin: 0 0.25rem 0.1rem 0;
+  margin: 0 0.25rem 0.05rem 0;
 }
 .accepted {
   background-color: #00D118;
@@ -420,7 +426,7 @@
   aspect-ratio: 1;
   border-radius: 100%;
   display: inline-block;
-  margin: 0 0.25rem 0.1rem 0;
+  margin: 0 0.25rem 0.05rem 0;
 }
 .declined {
   background-color: #FF0000;
@@ -428,6 +434,6 @@
   aspect-ratio: 1;
   border-radius: 100%;
   display: inline-block;
-  margin: 0 0.25rem 0.1rem 0;
+  margin: 0 0.25rem 0.05rem 0;
 }
 
