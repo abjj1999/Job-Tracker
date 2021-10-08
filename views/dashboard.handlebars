@@ -2,13 +2,14 @@
     <button class="create-btn" type="button" id="createButton">Create +</button>
 </div>
 <div class="app-tracker-wrapper">
-    <div class="flex-container align-center-middle">
-        <h3 class="app-tracker-title">Your Applications</h3>
-    </div>
+    
 
     <div class="flex-container align-center">
         {{#if applications.length}}
         <div class="accordion-cstm" id="appArea">
+            <div class="flex-container align-center-middle app-tracker-title">
+        <h3 class="app-tracker-title">Your Applications</h3>
+    </div>
                 {{#each applications as |application|}}
 
                 {{> accordion application}}

@@ -1,3 +1,5 @@
+
+
 :root {
   --primary-color: #1da1f2;
   --secondary-color: #7f7f7f;
@@ -39,6 +41,28 @@
     transform: scale(1.5);
   }
 
+  .accordion__content {
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 250ms;
+    padding: 0 15px;
+    max-width: 35rem;
+  }
+
+  .accordion__content::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+  .accordion__content::-webkit-scrollbar-track {
+    background: hsl(0, 0%, 97%);
+  }
+  
+  .accordion__content::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 73%)	;
+    border-radius: 500px;
+    width: 50%;
+  }
+
   .app-tracker-title {
     background-color: var(--secondary-color);
     color: #fff;
@@ -75,6 +99,29 @@
     margin-top: -12px;
   }
 
+  .accordion__content {
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 250ms;
+    padding: 0 15px;
+    max-width: 35rem;
+  }
+
+  .accordion__content::-webkit-scrollbar {
+    width: 0.35rem;
+  }
+  
+  .accordion__content::-webkit-scrollbar-track {
+    /* background: hsl(0, 0%, 97%); */
+    opacity: 0 !important;
+  }
+  
+  .accordion__content::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 73%)	;
+    border-radius: 500px;
+    width: 50%;
+  }
+
   .accordion__button::after {
     content: "\25be";
     float: right;
@@ -85,14 +132,8 @@
     background-color: var(--secondary-color);
     color: #fff;
     padding: 0.5rem 4.25rem 0.5rem 4.25rem;
+    transform: translateY(5px);
   }
-}
-
-.accordion__content {
-  overflow: hidden;
-  max-height: 0px;
-  transition: max-height 250ms;
-  padding: 0 15px;
 }
 
 .accordion__button--active {
@@ -101,6 +142,7 @@
 
 .accordion__button--active::after {
   content: "\25b4";
+  transform: scale(1.5);
 }
 
 .accordion__input {

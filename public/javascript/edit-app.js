@@ -40,7 +40,7 @@ const editBtns = document.querySelectorAll('.edit-btn');
 
 editBtns.forEach(editBtn => {
   const parent = editBtn.parentNode.parentNode.parentNode;
-  const jobLabel = parent.getElementsByTagName('label')[0];
+  const jobLabel = parent.getElementsByTagName('button')[0];
   const companyInput = parent.getElementsByTagName('h4')[0];
   const companyURL = parent.getElementsByTagName('a')[0];
   const dateApplied = parent.getElementsByTagName('span')[0];
