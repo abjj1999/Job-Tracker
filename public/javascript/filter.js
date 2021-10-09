@@ -1,4 +1,5 @@
 const filter = $('#filterBtn');
+const filterBtn = $('.filterSearchBtn');
 const filterContainer = document.querySelector('.filter-container');
 
 filter.on('click', () => {
@@ -11,4 +12,7 @@ filter.on('click', () => {
     }
 })
 
+filterBtn.on('click', () => {
+    console.log('yay')
+})
 
