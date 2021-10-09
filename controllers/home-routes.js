@@ -14,8 +14,10 @@ router.get('/', withAuth, (req, res) => {
                 const apps = appData.map(application => application.get({ plain: true }));
                 const applications = apps.filter(application => {
                     let companyName = application.companyName.toLowerCase();
+                    let jobTitle = application.jobTitle.toLowerCase();
+                    let description = application.description.toLowerCase();
                     let query = req.query.search.toLowerCase();
-                    if(companyName.includes(query)) {
+                    if(companyName.includes(query) || jobTitle.includes(query) || description.includes(query)) {
                         return application;
                     }
                 });
