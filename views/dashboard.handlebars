@@ -1,15 +1,28 @@
+<div>
+    <button class="filter flex-start" type="button" id="filterBtn"><i class="fas fa-filter"></i></button>
+</div>
+
+
 <div class="flex-end create-btn-container">
     <button class="create-btn" type="button" id="createButton">Create +</button>
 </div>
+<div class="target">
+<div class="filter-container">
+        <input type="text" id="companyNameFilter" name="companyNameFilter" placeholder="Company Name">
+        <input placeholder="Min Salary" type="text">
+        <input placeholder="Max Salary" type="text">
+        <button class="filterSearchBtn">Filter</button>
+</div>
+</div>
+
 <div class="app-tracker-wrapper">
-    
+    <div class="flex-container align-center-middle">
+        <h3 class="app-tracker-title">Your Applications</h3>
+    </div>
 
     <div class="flex-container align-center">
         {{#if applications.length}}
         <div class="accordion-cstm" id="appArea">
-            <div class="flex-container align-center-middle app-tracker-title">
-        <h3 class="app-tracker-title">Your Applications</h3>
-    </div>
                 {{#each applications as |application|}}
 
                 {{> accordion application}}
@@ -76,3 +89,5 @@
 <script src="/javascript/colors.js"></script>
 
 <script src="/javascript/accordion.js"></script>
+
+<script src="/javascript/filter.js"></script>

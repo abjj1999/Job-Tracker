@@ -1,5 +1,7 @@
 <div>
-    <button id="{{id}}" class="accordion__button" type="button"><div class="dot-div"></div>{{jobTitle}}</button>
+    
+    <button id="{{id}}" class="accordion__button" type="button"><div class="dot-div" style="float: left;"></div><div style="float: left;">{{jobTitle}}</div></button>
+    
     <div class="accordion__content">
         <h4 class="company_Name">{{companyName}}</h4>
         <p>Application URL: <a class="company_URL" href="{{companyURL}}" id="appLink" target="_blank">{{format_url companyURL}}</a></p>
