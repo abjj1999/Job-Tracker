@@ -6,7 +6,9 @@ filter.on('click', () => {
     const search = document.querySelector('#search');
     if(window.location.href.includes('?search')) {
         const searchArr = window.location.search.split('/');
-        const searchText = searchArr[searchArr.length - 1].split('=')[1];
+        const searchTextArr = searchArr[searchArr.length - 1].split('=')[1];
+        const searchFinal = searchTextArr.split('%20');
+        const searchText = searchFinal.join(' ');
         search.value = searchText;
     }
 
