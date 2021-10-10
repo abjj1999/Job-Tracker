@@ -1,3 +1,5 @@
+
+
 :root {
   --primary-color: #1da1f2;
   --secondary-color: #7f7f7f;
@@ -30,7 +32,7 @@
     color: #000;
     text-align: left;
     transition: background 250ms ease;
-    margin-top: -10px;
+    margin-top: 0;
   }
 
   .accordion__button::after {
@@ -39,10 +41,47 @@
     transform: scale(1.5);
   }
 
+  .accordion__content {
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 250ms;
+    padding: 0 15px;
+    max-width: 35rem;
+  }
+
+  .accordion__content::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+  .accordion__content::-webkit-scrollbar-track {
+    background: hsl(0, 0%, 97%);
+  }
+  
+  .accordion__content::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 73%)	;
+    border-radius: 500px;
+    width: 50%;
+  }
+
   .app-tracker-title {
     background-color: var(--secondary-color);
     color: #fff;
     padding: 0.5rem 10.1rem 0.5rem 10.1rem;
+  }
+
+  .filter-container {
+    display: none;
+    transition: all 150ms;
+  }
+
+  .filter-container--active {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+    margin: 0 1rem 0 1rem;
+    padding: 1rem 0.5rem 0 0.5rem;
+    border-radius: 5px;
   }
 }
 
@@ -58,7 +97,8 @@
     padding: 0.75rem 0.5rem 0 0.5rem;
     box-shadow: 0 0 15px rgb(0, 0, 0);
     border-radius: 5px;
-    overflow: hidden;
+    overflow: scroll;
+    max-height: 100%;
   }
 
   .accordion__button {
@@ -75,6 +115,29 @@
     margin-top: -12px;
   }
 
+  .accordion__content {
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 250ms;
+    padding: 0 15px;
+    max-width: 35rem;
+  }
+
+  .accordion__content::-webkit-scrollbar {
+    width: 0.35rem;
+  }
+  
+  .accordion__content::-webkit-scrollbar-track {
+    /* background: hsl(0, 0%, 97%); */
+    opacity: 0 !important;
+  }
+  
+  .accordion__content::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 73%)	;
+    border-radius: 500px;
+    width: 50%;
+  }
+
   .accordion__button::after {
     content: "\25be";
     float: right;
@@ -85,14 +148,33 @@
     background-color: var(--secondary-color);
     color: #fff;
     padding: 0.5rem 4.25rem 0.5rem 4.25rem;
+
+  }
+
+  .filter-container {
+    display: none;
+    transition: all 150ms;
+  }
+
+  .filter-container--active {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+    margin: 0 1rem 0 1rem;
+    padding: 1rem 0.5rem 0 0.5rem;
+    border-radius: 5px;
   }
 }
 
-.accordion__content {
-  overflow: hidden;
-  max-height: 0px;
-  transition: max-height 250ms;
-  padding: 0 15px;
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.space-around {
+  display: flex;
+  justify-content: space-around;
 }
 
 .accordion__button--active {
@@ -101,18 +183,7 @@
 
 .accordion__button--active::after {
   content: "\25b4";
-}
-
-.accordion__input {
-    display: none;
-}
-
-.accordion__input:checked ~ .accordion__content {
-    display: block;
-}
-
-.accordion__input:checked ~ .accordion__label::after {
-    transform: translateY(-50%) rotate(0.5turn);
+  transform: scale(1.5);
 }
 
 .container {
@@ -122,6 +193,15 @@
 /* .btn-container {
     margin: 0 25rem 0 25rem;
 } */
+
+float-right {
+  float: right;
+}
+
+.company_Name {
+  display: flex;
+  justify-content: center;
+}
 
 .page-conatiner {
   position: relative;
@@ -237,7 +317,7 @@
 }
 
 .create-btn-container {
-  margin: 1rem 1rem 0 0;
+  margin: -2.5rem 1rem 1rem 0;
 }
 
 .create-btn {
@@ -437,3 +517,42 @@
   margin: 0 0.25rem 0.05rem 0;
 }
 
+.filter {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem 0 0 1rem;
+  color: #fff;
+  font-size: 2rem;
+  background-color: var(--primary-color);
+  padding: 0.25rem;
+  border-radius: 5px;
+  transition: transform 150ms;
+}
+
+.filter:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.filter-container--active input {
+  width: 30rem;
+  border-radius: 5px;
+}
+
+.filterSearchBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.25rem 1rem 0;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem;
+  transition: background 150ms, transform 150ms, font-size 150ms;
+}
+
+.filterSearchBtn:hover {
+  transform: scale(1.1);
+  background: #3fb5ff;
+  cursor: pointer;
+}

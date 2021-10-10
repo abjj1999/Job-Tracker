@@ -10,9 +10,23 @@ router.get('/', withAuth, (req, res) => {
         }
     })
         .then(appData => {
-            const applications = appData.map(application => application.get({ plain: true }));
-            console.log(req.session.loggedIn);
-            res.render('dashboard', { applications, loggedIn: true });
+            if(req.query.search) {
+                const apps = appData.map(application => application.get({ plain: true }));
+                const applications = apps.filter(application => {
+                    let companyName = application.companyName.toLowerCase();
+                    let jobTitle = application.jobTitle.toLowerCase();
+                    let description = application.description.toLowerCase();
+                    let query = req.query.search.toLowerCase();
+                    if(companyName.includes(query) || jobTitle.includes(query) || description.includes(query)) {
+                        return application;
+                    }
+                });
+                console.log(applications)
+                res.render('dashboard', { applications, loggedIn: true });
+            } else {
+                const applications = appData.map(application => application.get({ plain: true }));
+                res.render('dashboard', { applications, loggedIn: true });
+            }
         })
         .catch(err => {
             console.log(err);
