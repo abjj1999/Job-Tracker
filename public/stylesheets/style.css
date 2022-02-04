@@ -316,9 +316,9 @@ float-right {
   justify-content: flex-end;
 }
 
-.create-btn-container {
+/* .create-btn-container {
   margin: -2.5rem 1rem 1rem 0;
-}
+} */
 
 .create-btn {
   background-color: var(--primary-color);
