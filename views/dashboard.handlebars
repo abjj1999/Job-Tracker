@@ -1,17 +1,11 @@
-<div>
-    <button class="filter flex-start" type="button" id="filterBtn"><i class="fas fa-filter"></i></button>
-</div>
-
-
-<div class="justify-space-between create-btn-container">
-    <div class="filter-container">
+<div class="button-container">
+    <div class="flex-start filter-container">
         <input type="text" id="search" name="search" placeholder="Search Applications">
-        <button class="filterSearchBtn">Filter</button>
-</div>
-    <button class="create-btn" type="button" id="createButton">Create +</button>
-</div>
-<div class="target">
-
+        <button class="filterSearchBtn">Search</button>
+    </div>
+    <div class="flex-end create-btn-container">
+        <button class="create-btn" type="button" id="createButton">Create +</button>
+    </div>
 </div>
 
 <div class="app-tracker-wrapper">
@@ -22,11 +16,11 @@
     <div class="flex-container align-center">
         {{#if applications.length}}
         <div class="accordion-cstm" id="appArea">
-                {{#each applications as |application|}}
+            {{#each applications as |application|}}
 
-                {{> accordion application}}
+            {{> accordion application}}
 
-                {{/each}}
+            {{/each}}
         </div>
         {{/if}}
     </div>
@@ -49,13 +43,21 @@
             <input type="text" placeholder="ex: job.com" id="applicationUrl" name="post-url">
             <input name="date" type="text" class="form-control datepicker" id="date" placeholder="Select date"
                 autocomplete="off" autofill="off">
-                    <select name="status">
-                        <option value="Pending"><div class="pending"></div>Pending</option>
-                        <option value="Ready to Apply"><div class="ready-to-apply"></div>Ready to Apply</option>
-                        <option value="Submitted"><span class="submitted"></span>Submitted</option>
-                        <option value="Accepted"><div class="accepted"></div>Accepted</option>
-                        <option value="Declined"><div class="declined"></div>Declined</option>
-                    </select>
+            <select name="status">
+                <option value="Pending">
+                    <div class="pending"></div>Pending
+                </option>
+                <option value="Ready to Apply">
+                    <div class="ready-to-apply"></div>Ready to Apply
+                </option>
+                <option value="Submitted"><span class="submitted"></span>Submitted</option>
+                <option value="Accepted">
+                    <div class="accepted"></div>Accepted
+                </option>
+                <option value="Declined">
+                    <div class="declined"></div>Declined
+                </option>
+            </select>
             <label>Want to Recieve Notifications?</label>
             <input type="checkbox" id="notify-me" name="notify-me" value="Notify" placeholder="Notify Me">
             <input type="submit" class="save-btn" id="appSaveBtn">
@@ -73,9 +75,11 @@
     integrity="sha512-xl5QX7taasTTA2h6+NAvqR3BL+nBkVdKQlbd27qFrrWkAbE4VjSCfIYfXZyNIQ4T0c/4i6WfHl5vI4IX6FwICw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 <script src="/javascript/script.js"></script>
 
