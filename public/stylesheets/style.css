@@ -2,16 +2,16 @@
 
 :root {
   --primary-color: #1da1f2;
+  --hover-color: #008ae0;
   --secondary-color: #7f7f7f;
   --accent-color-1: #fff;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
-  body {
-    background-image: url("https://source.unsplash.com/1920x1366/?landscape,road");
-    background-repeat: no-repeat;
-    background-size: auto;
-  }
   .accordion-cstm {
     min-width: 35rem;
     background: #fff;
@@ -89,11 +89,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    background-image: url("https://source.unsplash.com/768x973/?landscape,road");
-    background-repeat: no-repeat;
-    background-size: auto;
-  }
   .accordion-cstm {
     min-width: 15rem;
     background: #fff;
@@ -216,15 +211,24 @@ float-right {
 
 .nav {
   display: flex;
-  justify-content: space-between;
-  background-color: var(--primary-color);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background: url("https://source.unsplash.com/1920x254/?landscape,road");
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 254px;
+  width: 100vw;
   color: #fff;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  position: relative;
 }
 
 .nav h2 {
-  margin-left: 1rem;
+  margin: 0 auto auto auto;
+  background-color: var(--primary-color);
+  padding: 0 1rem;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .nav ul {
@@ -232,18 +236,71 @@ float-right {
   align-items: center;
   margin-right: 1rem;
   list-style: none;
+  margin-top: 2rem;
 }
 
-.nav ul li {
-    margin: 0 0.5rem 0 0.5rem;
-}
-
-.nav ul li a {
+.nav ul a {
+  margin: 0 0.5rem;
+  background-color: var(--primary-color);
+  padding: 0 1rem;
+  border-radius: 15px;
   color: #fff;
+  transition: all 250ms ease-in-out;
+}
+
+.nav ul a:hover {
+  background-color: var(--hover-color);
+}
+
+.links {
+  background-color: var(--primary-color);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.links ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.links ul li {
+  margin: 0.75rem 0.5rem -0.25rem 0.5rem;
+}
+
+.links ul li a {
+  color: #fff;
+  transition: ease-in-out all 250ms;
+  padding: 0.25rem;
+  border-radius: 10px;
+}
+
+.links ul li a:hover {
+  background-color: var(--hover-color);
+}
+
+.create-account {
+  background-color: #777 !important;
+  transition: all 250ms ease-in-out;
+}
+
+.create-account:hover {
+  background-color: #555 !important;
+}
+
+.logout-btn {
+  background-color: #990000 !important;
+  transition: all 250ms ease-in-out;
+}
+
+.logout-btn:hover {
+  background-color: #FF0000 !important;
 }
 
 .card-bg {
   background-color: var(--accent-color-1);
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
 }
 
 .rounded {
@@ -561,4 +618,51 @@ float-right {
   transform: scale(1.1);
   background: #3fb5ff;
   cursor: pointer;
+}
+
+.jobs-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-search-form {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1.5rem;
+}
+
+.job-search-form input {
+  background-color: #777;
+  color: #fff;
+  text-align: center;
+  border: none;
+  margin: 0 .5rem;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.job-search-form input:focus {
+  outline: none;
+  text-align: left;
+}
+
+.job-search-form button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.job-results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.job-results div {
+  background-color: #777;
+  width: 293px;
+  height: 416px;
+  border-radius: 15px;
+  margin: 2rem;
 }
