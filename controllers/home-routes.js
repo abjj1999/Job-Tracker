@@ -52,4 +52,9 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+//Renders the jobs template
+router.get('/jobs', (req, res) => {
+    res.render('jobs');
+})
+
 module.exports = router;
